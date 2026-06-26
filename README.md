@@ -1,5 +1,3 @@
-# 📝 NOTES.md
-
 # 🏨 Hotel Reservation System - Notes
 
 A simple Java Spring Boot application for managing hotels, rooms, users, and reservations. It allows users to book rooms, manage hotels, and handle reservations efficiently.
