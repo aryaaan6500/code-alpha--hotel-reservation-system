@@ -1,210 +1,380 @@
-# Hotel Reservation System
+# 📝 NOTES.md
 
-A comprehensive hotel reservation platform built with Java Spring Boot, providing complete hotel management, room booking, and reservation handling capabilities.
+# 🏨 Hotel Reservation System - Notes
 
-## Features
+A simple Java Spring Boot application for managing hotels, rooms, users, and reservations. It allows users to book rooms, manage hotels, and handle reservations efficiently.
 
-- **User Management**
-  - User registration and login
-  - User profile management
-  - User authentication
+---
 
-- **Hotel Management**
-  - Add and manage hotels
-  - Search hotels by city and name
-  - Hotel information and amenities
-  - Activate/deactivate hotels
+# 🎯 Project Objectives
 
-- **Room Management**
-  - Add and manage rooms
-  - Room types: Single, Double, Suite, Deluxe, Penthouse
-  - Room availability tracking
-  - Room pricing management
+✅ Manage hotel information 🏨
 
-- **Reservation System**
-  - Create and manage reservations
-  - Check-in/Check-out functionality
-  - Availability checking
-  - Reservation status tracking
-  - Price calculation
-  - Special requests handling
+✅ Manage room availability 🛏️
 
-## Technology Stack
+✅ Register and manage users 👤
 
-- **Backend**: Java 17, Spring Boot 3.1.5
-- **Database**: H2 (In-memory for development)
-- **ORM**: Hibernate JPA
-- **Build Tool**: Maven 3.x
-- **REST API**: Spring Web
+✅ Book hotel rooms 📅
 
-## Project Structure
+✅ Track reservation status 📋
 
-```
+✅ Calculate booking prices 💰
+
+---
+
+# 🛠️ Technologies Used
+
+* ☕ Java 17
+* 🌱 Spring Boot 3.1.5
+* 🗄️ Spring Data JPA (Hibernate)
+* 💾 H2 Database
+* 📦 Maven
+* 🌐 REST API
+
+---
+
+# 📂 Project Structure
+
+```text
 hotel-reservation-system/
-├── src/
-│   ├── main/
-│   │   ├── java/com/hotelreservation/
-│   │   │   ├── HotelReservationApplication.java (Main class)
-│   │   │   ├── controller/
-│   │   │   │   ├── AuthController.java
-│   │   │   │   ├── UserController.java
-│   │   │   │   ├── HotelController.java
-│   │   │   │   ├── RoomController.java
-│   │   │   │   └── ReservationController.java
-│   │   │   ├── service/
-│   │   │   │   ├── UserService.java
-│   │   │   │   ├── HotelService.java
-│   │   │   │   ├── RoomService.java
-│   │   │   │   └── ReservationService.java
-│   │   │   ├── repository/
-│   │   │   │   ├── UserRepository.java
-│   │   │   │   ├── HotelRepository.java
-│   │   │   │   ├── RoomRepository.java
-│   │   │   │   └── ReservationRepository.java
-│   │   │   └── model/
-│   │   │       ├── User.java
-│   │   │       ├── Hotel.java
-│   │   │       ├── Room.java
-│   │   │       ├── RoomType.java
-│   │   │       ├── Reservation.java
-│   │   │       └── ReservationStatus.java
-│   │   └── resources/
-│   │       └── application.properties
-│   └── test/
-└── pom.xml
+│
+├── controller/       🌐 REST Controllers
+├── service/          ⚙️ Business Logic
+├── repository/       🗄️ Database Access
+├── model/            📦 Entity Classes
+├── resources/        📄 Configuration Files
+└── pom.xml           📦 Maven Dependencies
 ```
 
-## Prerequisites
+---
 
-- Java 17 or higher
-- Maven 3.6 or higher
-- Windows, Linux, or macOS
+# 📚 Main Modules
 
-## Installation
+## 👤 User Management
 
-1. Clone or extract the project
-2. Navigate to the project directory
-3. Build the project with Maven:
+Features:
+
+* 📝 Register new users
+* 🔑 Login users
+* 👤 Update user profile
+* ❌ Delete user
+* 📋 View user details
+
+---
+
+## 🏨 Hotel Management
+
+Features:
+
+* ➕ Add hotels
+* ✏️ Update hotel information
+* ❌ Delete hotels
+* 🔍 Search hotels
+* 📍 Search by city
+* 🏨 Activate or deactivate hotels
+
+---
+
+## 🛏️ Room Management
+
+Features:
+
+* ➕ Add rooms
+* ✏️ Update room details
+* 💲 Set room prices
+* 📋 View available rooms
+* 🚫 Mark rooms unavailable
+* ✅ Mark rooms available
+
+### 🛏️ Room Types
+
+* 🛌 Single
+* 👥 Double
+* 🌟 Suite
+* 💎 Deluxe
+* 👑 Penthouse
+
+---
+
+## 📅 Reservation Management
+
+Features:
+
+* 📝 Create reservations
+* ✅ Confirm booking
+* 🏨 Check-In
+* 🚪 Check-Out
+* ❌ Cancel reservation
+* 💰 Calculate booking cost
+* 📋 Track reservation status
+* 💬 Store special requests
+
+---
+
+# 📦 Entity Classes
+
+### 👤 User
+
+Stores:
+
+* User ID
+* Name
+* Email
+* Password
+* Contact Information
+
+---
+
+### 🏨 Hotel
+
+Stores:
+
+* Hotel Name
+* City
+* Address
+* Amenities
+* Active Status
+
+---
+
+### 🛏️ Room
+
+Stores:
+
+* Room Number
+* Room Type
+* Price
+* Availability
+
+---
+
+### 📅 Reservation
+
+Stores:
+
+* Reservation ID
+* User
+* Hotel
+* Room
+* Check-In Date
+* Check-Out Date
+* Total Price
+* Reservation Status
+
+---
+
+# 📊 Reservation Status
+
+* 🟡 Pending
+* ✅ Confirmed
+* 🏨 Checked-In
+* 🚪 Checked-Out
+* ❌ Cancelled
+
+---
+
+# 🌐 REST API Modules
+
+### 🔐 Authentication
+
+* Register User
+* Login User
+
+---
+
+### 👤 User API
+
+* Get User
+* Update User
+* Delete User
+* View All Users
+
+---
+
+### 🏨 Hotel API
+
+* Add Hotel
+* Update Hotel
+* Delete Hotel
+* Search Hotels
+* View Hotels
+
+---
+
+### 🛏️ Room API
+
+* Add Room
+* Update Room
+* Delete Room
+* View Rooms
+* Available Rooms
+
+---
+
+### 📅 Reservation API
+
+* Create Reservation
+* Update Reservation
+* Confirm Booking
+* Cancel Booking
+* Check-In
+* Check-Out
+* Reservation History
+
+---
+
+# 💾 Database
+
+Database Used:
+
+🗄️ H2 In-Memory Database
+
+### H2 Console
+
+* 🌐 URL: `http://localhost:8080/h2-console`
+* 💾 JDBC URL: `jdbc:h2:mem:hotelreservationdb`
+* 👤 Username: `sa`
+* 🔒 Password: *(Leave Blank)*
+
+---
+
+# ▶️ How to Run
+
+### Compile
 
 ```bash
 mvn clean install
 ```
 
-## Running the Application
-
-Run the application using Maven:
+### Start Application
 
 ```bash
 mvn spring-boot:run
 ```
 
-The application will start on `http://localhost:8080`
+Application URL:
 
-## API Documentation
+```
+http://localhost:8080
+```
 
-### Authentication Endpoints
+---
 
-- **POST** `/api/auth/register` - Register a new user
-- **POST** `/api/auth/login` - Login user
+# ⚙️ Features Summary
 
-### User Endpoints
+✅ User Registration 👤
 
-- **GET** `/api/users/{id}` - Get user by ID
-- **GET** `/api/users` - Get all users
-- **PUT** `/api/users/{id}` - Update user profile
-- **DELETE** `/api/users/{id}` - Delete user
+✅ User Login 🔑
 
-### Hotel Endpoints
+✅ Hotel Management 🏨
 
-- **POST** `/api/hotels` - Add new hotel
-- **GET** `/api/hotels/{id}` - Get hotel by ID
-- **GET** `/api/hotels` - Get all hotels
-- **GET** `/api/hotels/active/list` - Get active hotels
-- **GET** `/api/hotels/city/{city}` - Get hotels by city
-- **GET** `/api/hotels/search/{name}` - Search hotels by name
-- **PUT** `/api/hotels/{id}` - Update hotel
-- **DELETE** `/api/hotels/{id}` - Delete hotel
-- **PUT** `/api/hotels/{id}/deactivate` - Deactivate hotel
+✅ Room Management 🛏️
 
-### Room Endpoints
+✅ Room Availability ✔️
 
-- **POST** `/api/rooms` - Add new room
-- **GET** `/api/rooms/{id}` - Get room by ID
-- **GET** `/api/rooms/hotel/{hotelId}` - Get rooms by hotel
-- **GET** `/api/rooms/hotel/{hotelId}/available` - Get available rooms
-- **GET** `/api/rooms/type/{roomType}` - Get rooms by type
-- **PUT** `/api/rooms/{id}` - Update room
-- **DELETE** `/api/rooms/{id}` - Delete room
-- **PUT** `/api/rooms/{id}/mark-unavailable` - Mark room unavailable
-- **PUT** `/api/rooms/{id}/mark-available` - Mark room available
+✅ Reservation System 📅
 
-### Reservation Endpoints
+✅ Check-In / Check-Out 🏨
 
-- **POST** `/api/reservations` - Create reservation
-- **GET** `/api/reservations/{id}` - Get reservation by ID
-- **GET** `/api/reservations/user/{userId}` - Get user reservations
-- **GET** `/api/reservations/room/{roomId}` - Get room reservations
-- **GET** `/api/reservations/status/{status}` - Get reservations by status
-- **GET** `/api/reservations/date-range?startDate=YYYY-MM-DD&endDate=YYYY-MM-DD` - Get reservations by date range
-- **PUT** `/api/reservations/{id}` - Update reservation
-- **PUT** `/api/reservations/{id}/confirm` - Confirm reservation
-- **PUT** `/api/reservations/{id}/check-in` - Check-in to reservation
-- **PUT** `/api/reservations/{id}/check-out` - Check-out from reservation
-- **PUT** `/api/reservations/{id}/cancel` - Cancel reservation
-- **DELETE** `/api/reservations/{id}` - Delete reservation
+✅ Booking Cancellation ❌
 
-## Database
+✅ Price Calculation 💰
 
-### H2 Console
+✅ Search Hotels 🔍
 
-Access H2 console at: `http://localhost:8080/h2-console`
+---
 
-- URL: `jdbc:h2:mem:hotelreservationdb`
-- Username: `sa`
-- Password: (leave blank)
+# 🛡️ Error Handling
 
-## Sample Data
+| Status Code | Meaning               |
+| ----------- | --------------------- |
+| ✅ 200       | Request Successful    |
+| 🆕 201      | Resource Created      |
+| ⚠️ 400      | Bad Request           |
+| 🔍 404      | Resource Not Found    |
+| 🚫 409      | Room Not Available    |
+| 💥 500      | Internal Server Error |
 
-Sample data can be added through the REST API endpoints after starting the application.
+---
 
-## Configuration
+# 📖 Java Concepts Used
 
-Modify `application.properties` to change:
+* ☕ Java
+* 🌱 Spring Boot
+* 📦 Maven
+* 🗄️ Hibernate JPA
+* 📂 Repository Pattern
+* 🧩 Object-Oriented Programming
+* 🌐 REST APIs
+* 📋 CRUD Operations
+* 💾 Database Management
 
-- Server port
-- Database settings
-- Logging levels
-- JPA/Hibernate configuration
+---
 
-## Error Handling
+# 🚀 Future Improvements
 
-The API returns standard HTTP status codes:
+✨ JWT Authentication
 
-- **200 OK** - Successful request
-- **201 Created** - Resource created successfully
-- **400 Bad Request** - Invalid input
-- **404 Not Found** - Resource not found
-- **409 Conflict** - Room not available for dates
-- **500 Internal Server Error** - Server error
+✨ Payment Gateway 💳
 
-## Future Enhancements
+✨ Email Notifications 📧
 
-- User authentication with JWT
-- Payment integration
-- Email notifications
-- Booking confirmation emails
-- Admin dashboard
-- Review and rating system
-- Multi-language support
-- Advanced search and filtering
-- Discount codes
-- Loyalty programs
+✨ Booking Confirmation Email 📩
 
-## License
+✨ Admin Dashboard 📊
 
-This project is open source and available under the MIT License.
+✨ Reviews & Ratings ⭐
 
-## Support
+✨ Multi-language Support 🌍
+
+✨ Advanced Search 🔍
+
+✨ Discount Coupons 🎁
+
+✨ Loyalty Program 🏆
+
+---
+
+# ⚠️ Limitations
+
+* ❌ Uses H2 in-memory database (data is lost after restart).
+* ❌ No online payment integration.
+* ❌ No email notifications.
+* ❌ No admin dashboard.
+* ❌ No review system.
+
+---
+
+# 📚 Learning Outcomes
+
+After completing this project, you will learn:
+
+* ☕ Java Spring Boot
+* 🌐 REST API Development
+* 🗄️ Database Connectivity
+* 📦 Maven Project Structure
+* 🧩 Object-Oriented Programming
+* 💾 Hibernate JPA
+* 🔄 CRUD Operations
+* 🏨 Hotel Reservation Workflow
+
+---
+
+# ❤️ Project Information
+
+📌 **Project:** Hotel Reservation System
+
+☕ **Language:** Java
+
+🌱 **Framework:** Spring Boot
+
+🗄️ **Database:** H2
+
+📦 **Build Tool:** Maven
+
+🚀 **Version:** 1.0
+
+🏨 **Happy Booking & Happy Coding! 👨‍💻👩‍💻✨**
 
 For support and questions, please create an issue in the project repository.
 
